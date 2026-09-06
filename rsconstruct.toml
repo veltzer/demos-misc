@@ -6,3 +6,54 @@ src_dirs = ["."]
 # lint the GitHub Actions workflow files with actionlint
 [processor.actionlint]
 src_dirs = [".github/workflows"]
+
+# ─── markdown ────────────────────────────────────────────────────────────────
+
+[processor.rumdl]
+src_files = ["README.md"]
+
+# ─── shell ───────────────────────────────────────────────────────────────────
+
+[processor.shellcheck]
+src_dirs = ["gwt/scripts"]
+
+# ─── xml / svg ───────────────────────────────────────────────────────────────
+
+# not linted: grails/grails-intro/target (committed grails build output)
+[processor.xmllint]
+src_dirs = ["grails/grails-intro", "gwt"]
+
+# ─── c / c++ ─────────────────────────────────────────────────────────────────
+
+[processor.cppcheck]
+src_dirs = ["llvm"]
+args = [
+	"--error-exitcode=1",
+	"--enable=warning,style,performance,portability",
+	"--inline-suppr",
+]
+
+# ─── java ────────────────────────────────────────────────────────────────────
+
+[processor.checkstyle]
+src_dirs = ["gwt"]
+args = ["-c", "checkstyle.xml"]
+
+# ─── html ────────────────────────────────────────────────────────────────────
+
+# not linted: grails/grails-intro/target (committed grails build output)
+[processor.htmlhint]
+src_dirs = ["gwt"]
+
+# ─── css ─────────────────────────────────────────────────────────────────────
+
+# not linted: grails/grails-intro/target (committed grails build output)
+[processor.stylelint]
+src_dirs = ["grails/grails-intro/web-app/css", "gwt"]
+
+# ─── javascript ──────────────────────────────────────────────────────────────
+
+# not linted: gwt/Example07GwtJsni/war/scripts (vendored prototype/scriptaculous)
+[processor.eslint]
+src_dirs = ["grails/grails-intro/web-app/js"]
+args = ["-c", ".eslint.config.js"]
