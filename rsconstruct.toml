@@ -4,32 +4,32 @@
 # src_dirs entries name directories; "." (the whole tree) is a config error
 reject_dot_src_dirs = true
 
-[processor.taplo]
+[processor.checker.taplo]
 src_files = [".rumdl.toml", "rsconstruct.toml"]
 
 # lint the GitHub Actions workflow files with actionlint
-[processor.actionlint]
+[processor.checker.actionlint]
 src_dirs = [".github/workflows"]
 
 # ─── markdown ────────────────────────────────────────────────────────────────
 
-[processor.rumdl]
+[processor.checker.rumdl]
 src_files = ["README.md"]
 
 # ─── shell ───────────────────────────────────────────────────────────────────
 
-[processor.shellcheck]
+[processor.checker.shellcheck]
 src_dirs = ["gwt/scripts"]
 
 # ─── xml / svg ───────────────────────────────────────────────────────────────
 
 # not linted: grails/grails-intro/target (committed grails build output)
-[processor.xmllint]
+[processor.checker.xmllint]
 src_dirs = ["grails/grails-intro", "gwt"]
 
 # ─── c / c++ ─────────────────────────────────────────────────────────────────
 
-[processor.cppcheck]
+[processor.checker.cppcheck]
 src_dirs = ["llvm"]
 args = [
 	"--error-exitcode=1",
@@ -39,14 +39,14 @@ args = [
 
 # ─── java ────────────────────────────────────────────────────────────────────
 
-[processor.checkstyle]
+[processor.checker.checkstyle]
 src_dirs = ["gwt"]
 args = ["-c", "checkstyle.xml"]
 
 # ─── html ────────────────────────────────────────────────────────────────────
 
 # not linted: grails/grails-intro/target (committed grails build output)
-[processor.tidy]
+[processor.checker.tidy]
 src_dirs = ["gwt"]
 
 # ─── css ─────────────────────────────────────────────────────────────────────
@@ -54,13 +54,13 @@ src_dirs = ["gwt"]
 # not linted: grails/grails-intro/target (committed grails build output)
 # Only .css is passed: biome.jsonc turns biome's JavaScript and JSON linters
 # off, oxlint covers JavaScript and ijsonlint covers JSON.
-[processor.biome]
+[processor.checker.biome]
 src_dirs = ["grails/grails-intro/web-app/css", "gwt"]
 src_extensions = [".css"]
 
 # ─── javascript ──────────────────────────────────────────────────────────────
 
 # not linted: gwt/Example07GwtJsni/war/scripts (vendored prototype/scriptaculous)
-[processor.oxlint]
+[processor.checker.oxlint]
 src_dirs = ["grails/grails-intro/web-app/js"]
 args = ["-c", ".oxlintrc.json"]
