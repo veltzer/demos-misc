@@ -24,7 +24,7 @@ src_dirs = ["gwt/scripts"]
 # ─── xml / svg ───────────────────────────────────────────────────────────────
 
 # not linted: grails/grails-intro/target (committed grails build output)
-[processor.checker.xmllint]
+[processor.checker.ixmllint]
 src_dirs = ["grails/grails-intro", "gwt"]
 
 # ─── c / c++ ─────────────────────────────────────────────────────────────────
