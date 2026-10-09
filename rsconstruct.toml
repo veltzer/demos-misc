@@ -46,7 +46,7 @@ args = ["-c", "checkstyle.xml"]
 # ─── html ────────────────────────────────────────────────────────────────────
 
 # not linted: grails/grails-intro/target (committed grails build output)
-[processor.checker.tidy]
+[processor.checker.itidy]
 src_dirs = ["gwt"]
 
 # ─── css ─────────────────────────────────────────────────────────────────────
