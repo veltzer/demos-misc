@@ -67,4 +67,5 @@ src_extensions = [".css"]
 # not linted: gwt/Example07GwtJsni/war/scripts (vendored prototype/scriptaculous)
 [processor.checker.oxlint]
 src_dirs = ["grails/grails-intro/web-app/js"]
-args = ["-c", ".oxlintrc.json"]
+args = ["-c", ".oxlintrc.repo.json"]
+dep_inputs = [".oxlintrc.repo.json"]
