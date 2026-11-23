@@ -8,7 +8,7 @@ input, select, textarea {
 
 html {
 	background-color: #ddd;
-	background-image: linear-gradient(top, #aaa, #ddd);
+	background-image: linear-gradient(to bottom, #aaa, #ddd);
 	filter: progid:DXImageTransform.Microsoft.gradient(startColorStr = '#aaa', EndColorStr = '#ddd');
 	background-repeat: no-repeat;
 	height: 100%;
