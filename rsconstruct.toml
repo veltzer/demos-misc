@@ -40,11 +40,12 @@ src_dirs = ["grails/grails-intro", "gwt"]
 
 # ─── c / c++ ─────────────────────────────────────────────────────────────────
 
+# One program per file (llvm/hello.c): the default one-run-per-file mode fits.
 [processor.checker.cppcheck]
 src_dirs = ["llvm"]
 args = [
 	"--error-exitcode=1",
-	"--enable=warning,style,performance,portability",
+	"--enable=warning,style,performance,portability,information,unusedFunction",
 	"--check-level=exhaustive",
 	"--inline-suppr",
 ]
