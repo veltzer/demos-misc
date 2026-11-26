@@ -43,6 +43,7 @@ src_dirs = ["gwt/scripts"]
 
 # not linted: grails/grails-intro/target (committed grails build output)
 [processor.checker.ixmllint]
+src_files = ["checkstyle.xml"]
 # warnings fail too, not only fatal errors
 strict = true
 src_dirs = ["grails/grails-intro", "gwt"]
